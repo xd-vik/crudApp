@@ -22,13 +22,19 @@ const CreateUser = ({ setUsers }) => {
 
   return (
     <div>
-      <h2>Create User</h2>
-      {success && <p>User created successfully!</p>}
-      <button onClick={handleBackClick}>Back to Home</button>
-      <UserForm
-        initialData={{ name: "", email: "", phone: "" }}
-        onSubmit={handleCreateUser}
-      />
+      <h2 className="user-head">Create User</h2>
+      <div className="cen">
+        {success && (
+          <div className="success">
+            <p>User created successfully!</p>{" "}
+            <button onClick={handleBackClick}>Back to Home</button>{" "}
+          </div>
+        )}
+        <UserForm
+          initialData={{ name: "", email: "", phone: "" }}
+          onSubmit={handleCreateUser}
+        />
+      </div>
     </div>
   );
 };

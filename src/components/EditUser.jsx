@@ -14,25 +14,30 @@ const EditUser = ({ users, setUsers }) => {
   }, [id, users]);
 
   const handleUpdateUser = (updatedUser) => {
-    // Simulate API call
     setUsers((prevUsers) =>
       prevUsers.map((user) => (user.id === updatedUser.id ? updatedUser : user))
     );
-    setSuccess(true); // Indicate success
+    setSuccess(true);
   };
 
   const handleBackClick = () => {
-    navigate("/"); // Navigate to the home page
+    navigate("/");
   };
 
   if (!user) return <p>Loading...</p>;
 
   return (
     <div>
-      <h2>Edit User</h2>
-      {success && <p>User updated successfully!</p>}
-      <UserForm initialData={user} onSubmit={handleUpdateUser} />
-      <button onClick={handleBackClick}>Back to Home</button>
+      <h2 className="user-head">Edit User</h2>
+      <div className="cen">
+        {success && (
+          <div className="success">
+            <p>User updated successfully!</p>
+            <button onClick={handleBackClick}>Back to Home</button>
+          </div>
+        )}
+        <UserForm initialData={user} onSubmit={handleUpdateUser} />
+      </div>
     </div>
   );
 };

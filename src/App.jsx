@@ -5,6 +5,7 @@ import UserList from "./components/UserList";
 import CreateUser from "./components/CreateUser";
 import EditUser from "./components/EditUser";
 import axios from "axios";
+import Footer from "./components/Footer";
 
 const App = () => {
   const [users, setUsers] = useState([]);
@@ -19,7 +20,10 @@ const App = () => {
   return (
     <Router>
       <nav>
-        <Link to="/">Home</Link> | <Link to="/create">Create User</Link>
+        <div className="lenk">
+          {" "}
+          <Link to="/">Home</Link> <Link to="/create">Create User</Link>
+        </div>
       </nav>
       <Routes>
         <Route
@@ -32,6 +36,9 @@ const App = () => {
           element={<EditUser users={users} setUsers={setUsers} />}
         />
       </Routes>
+      <footer>
+        <Footer />
+      </footer>
     </Router>
   );
 };

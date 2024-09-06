@@ -14,7 +14,7 @@ const UserForm = ({ initialData, onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="add-user" onSubmit={handleSubmit}>
       <label>
         Name:
         <input
@@ -45,7 +45,9 @@ const UserForm = ({ initialData, onSubmit }) => {
         />
       </label>
       <br />
-      <button type="submit">Submit</button>
+      <div className="sub">
+        <button type="submit">Submit</button>
+      </div>
     </form>
   );
 };

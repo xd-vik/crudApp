@@ -8,7 +8,7 @@ const UserList = ({ users, setUsers }) => {
 
   return (
     <div>
-      <h2>User List</h2>
+      <h2 className="user-head"> User List</h2>
       <table>
         <thead>
           <tr>
@@ -24,9 +24,13 @@ const UserList = ({ users, setUsers }) => {
               <td>{user.name}</td>
               <td>{user.email}</td>
               <td>{user.phone}</td>
-              <td>
-                <Link to={`/edit/${user.id}`}>Edit</Link>
-                <button onClick={() => deleteUser(user.id)}>Delete</button>
+              <td className="act">
+                <Link className="edit" to={`/edit/${user.id}`}>
+                  Edit
+                </Link>
+                <button className="delete" onClick={() => deleteUser(user.id)}>
+                  Delete
+                </button>
               </td>
             </tr>
           ))}
